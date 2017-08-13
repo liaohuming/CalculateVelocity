@@ -33,11 +33,11 @@ int main(int argc, char* argv[])
 	int flag = 1;
 	while (flag)
 	{
-		double xLower = 156.0;
-		double xUpper = 164.0;
+		double xLower = 297;
+		double xUpper = 303;
 		double yLower = 0.0;
-		double yUpper = 120.0;
-		int nodeNum = 30;
+		double yUpper = 200.0;
+		int nodeNum = 40;
 		vector <double> y;
 		vector <RangeBox> rangeBox_vector;
 
@@ -72,8 +72,10 @@ int main(int argc, char* argv[])
 			rb_i.y_coordinate = yLower + ((2 * i - 1) / 2.0)*delta_y;
 			rb_i.x_lower = xLower;
 			rb_i.x_upper = xUpper;
-			rb_i.y_lower = yLower + (i - 1)*delta_y;
-			rb_i.y_upper = yLower + i*delta_y;
+			//rb_i.y_lower = yLower + (i - 1)*delta_y;
+			//rb_i.y_upper = yLower + i*delta_y;
+			rb_i.y_lower = rb_i.y_coordinate - 1.5*delta_y;
+			rb_i.y_upper = rb_i.y_coordinate + 1.5*delta_y;
 			rangeBox_vector.push_back(rb_i);
 		}
 
